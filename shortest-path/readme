@@ -1,0 +1,20 @@
+If you don't want to use the i18N_T package, you'll have to replace all the calls to i18N_T() by gettext(), intl fonctions, or by sentences in your own language.
+
+This class is reasonably fast as once it has found solutions, they are recorded in the "chemins" table.
+You can, of course, rename the database, the tables and the fields to fit your habits.
+Once you are decided, you'll have to change the default values in constantes.php
+
+This class takes three parameters as input :
+the  start point
+the end point
+the way the calculation is effectued (distance or time).
+It returns a graph object containing the collection of results (in collectionOK).
+
+Temporary branches are kept in list objets with the "liste" class (class.liste.php).
+
+This class tries to get rid of bad branches very quick to make the search faster.
+
+One important point : when adding records in th "vvd" table, always add the two directions (eg : A -> B and B-> A).
+The class knows which one it must use in a branche so that it doesn't loop.
+
+The "graph" class (class.graph.php) could be adapted for many other uses.

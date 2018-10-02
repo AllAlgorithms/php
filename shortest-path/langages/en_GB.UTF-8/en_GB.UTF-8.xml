@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionnaire>
+	<module type="Graph">
+		<couple>
+			<source>Chemin le plus court</source>
+			<cible>Shortest way</cible>
+		</couple>
+		<couple>
+			<source>Calcul du chemin le plus court (en distance ou temps) entre deux villes</source>
+			<cible>Compute the shortest way (km or time) between two cities</cible>
+		</couple>
+		<couple>
+			<source>Les codes utilisés sont ceux de villes d'Australie</source>
+			<cible>Codes used are from australian cities</cible>
+		</couple>
+		<couple>
+			<source>La distance entre %s et %s est de %.2f km</source>
+			<cible>The distance between %s and %s is %.2f km</cible>
+		</couple>
+		<couple>
+			<source>Le circuit le plus court est :</source>
+			<cible>the shortest route is</cible>
+		</couple>
+		<couple>
+			<source>La distance entre %s et %s est de %s</source>
+			<cible>The distance between %s and %s is %s</cible>
+		</couple>
+		<couple>
+			<source>Le circuit le plus rapide est :</source>
+			<cible>The quickest route is</cible>
+		</couple>
+	</module>
+</dictionnaire>
