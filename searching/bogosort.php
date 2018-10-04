@@ -47,7 +47,7 @@ function runTest(array $input) {
 
     echo 'INPUT: ' . join(', ', $input) . PHP_EOL;
     echo 'OUTPUT: ' . join(', ', $result) . PHP_EOL;
-    echo 'TIME: ' . sprintf('%.6f ms', $executionTime / 1000) . PHP_EOL . PHP_EOL;
+    echo 'TIME: ' . sprintf('%.6f ms', $executionTime * 1000) . PHP_EOL . PHP_EOL;
 }
 
 runTest([1, 0]);
