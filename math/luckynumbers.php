@@ -11,6 +11,8 @@
 
 $integers = array();
 
+print "Enter a max number upto which lucky numbers will be generated:";
+
 trim(fscanf(STDIN, "%d\n", $numeric_input)); // Generate lucky numbers less than or equal to $numeric_input
 
 for( $i = 1 ; $i <= $numeric_input; $i++ ) {
@@ -31,6 +33,8 @@ $index = 1;
 // print_r( $integers );
 }
 
+
+print "\nLucky numbers are:\n";
 for( $i = 1 ; $i <= $numeric_input; $i++ ) {
 		if( $integers[$i] ) {
 				print $i ." ";
