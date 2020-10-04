@@ -1,56 +1,18 @@
-#!/usr/local/bin/php
 <?php
 
-function merge(array $left, array $right)
-{
+function merge_sort(array $left, array $right) {
     $result = [];
-    while (count($left) || count($right)) {
-        if (count($left) && count($right)) {
-            if ($left[0] <= $right[0]) {
-                $result[] = $left[0];
-                $left = array_slice($left, 1);
-            } else {
-                $result[] = $right[0];
-                $right = array_slice($right, 1);
-            }
-        } elseif (count($left)) {
-            $result[] = $left[0];
-            $left = array_slice($left, 1);
-        } elseif (count($right)) {
-            $result[] = $right[0];
-            $right = array_slice($right, 1);
-        }
-    }
-
-    return $result;
+    while (count($left) && count($right)) 
+        ($left[0] < $right[0]) ? $result[] = array_shift($left) : $result[] = array_shift($right);
+    return array_merge($result, $left, $right);
 }
 
-function mergeSort(array $data)
-{
-    if (1 >= count($data)) {
-        return $data;
-    }
+function merge(array $arrayToSort) {
+    if (count($arrayToSort) == 1)
+        return $arrayToSort;
 
-    $middle = count($data) / 2;
+    $left = merge(array_slice($arrayToSort, 0, count($arrayToSort) / 2));
+    $right = merge(array_slice($arrayToSort, count($arrayToSort) / 2, count($arrayToSort)));
 
-    $left = array_slice($data, 0, $middle);
-    $right = array_slice($data, $middle);
-
-    $left = mergeSort($left);
-    $right = mergeSort($right);
-
-    return merge($left, $right);
+    return merge_sort($left, $right);
 }
-
-function printArray(array $data)
-{
-    print PHP_EOL;
-    print implode(' ', $data);
-    print PHP_EOL;
-}
-
-$testArray = [10, 33, -15, 55, 1001, 23];
-print 'Unsorted array';
-printArray($testArray);
-print 'Sorted array';
-printArray(mergeSort($testArray));
